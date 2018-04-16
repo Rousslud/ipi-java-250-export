@@ -1,55 +1,46 @@
 package com.example.demo.entity;
 
-/*import java.sql.Date;*/
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-
-
+/**
+ * Created by Kayne on 09/04/2018.
+ */
 @Entity
 public class Facture {
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	/*private Date datecommande;
-	private Double prixtotal;*/
-	
-	@OneToMany(mappedBy = "facture")
-	private Set<LigneFacture> lignefacture = new HashSet();
-	
-	@ManyToOne
-	private Client client;
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @ManyToOne
+    private Client client;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @OneToMany(mappedBy = "facture")
+    private Set<LigneFacture> ligneFactures = new HashSet<>();
 
-	public Set<LigneFacture> getLignefacture() {
-		return lignefacture;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setLignefacture(Set<LigneFacture> lignefacture) {
-		this.lignefacture = lignefacture;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Client getClient() {
-		return client;
-	}
+    public Client getClient() {
+        return client;
+    }
 
-	public void setClient(Client client) {
-		this.client = client;
-	}
-	
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
+    public Set<LigneFacture> getLigneFactures() {
+        return ligneFactures;
+    }
+
+    public void setLigneFactures(Set<LigneFacture> ligneFactures) {
+        this.ligneFactures = ligneFactures;
+    }
 }

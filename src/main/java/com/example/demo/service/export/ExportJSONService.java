@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.Writer;
 
 @Component
-public class ExportJSONServiceTest {
+public class ExportJSONService {
 
     @Autowired
     private ObjectMapper objectMapper;

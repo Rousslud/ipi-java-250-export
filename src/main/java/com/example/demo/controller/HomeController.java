@@ -13,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.PostConstruct;
 import java.util.List;
 
+/**
+ * Controller principale pour affichage des clients / factures sur la page d'acceuil.
+ */
 @Controller
 public class HomeController {
 
