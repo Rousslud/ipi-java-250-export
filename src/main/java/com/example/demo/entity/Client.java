@@ -18,7 +18,7 @@ public class Client {
 	@Column
 	private String prenom;
 	@Column
-	private String codepostal;
+	/*private String codepostal;
 	@Column
 	private String adresse;
 	@Column
@@ -26,7 +26,7 @@ public class Client {
 	@Column
 	private String email;
 	@Column
-	private double telephone;
+	private double telephone;*/
 	/*@OneToMany(mappedBy = "client")
 	private Set<Facture> factures = new HashSet();*/
 	
@@ -49,7 +49,7 @@ public class Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public String getCodepostal() {
+	/*public String getCodepostal() {
 		return codepostal;
 	}
 	public void setCodepostal(String codepostal) {
@@ -78,7 +78,7 @@ public class Client {
 	}
 	public void setTelephone(double telephone) {
 		this.telephone = telephone;
-	}
+	}*/
 	
 	
 	

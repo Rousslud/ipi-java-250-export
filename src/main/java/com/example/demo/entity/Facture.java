@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import java.sql.Date;
+/*import java.sql.Date;*/
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +14,8 @@ public class Facture {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Date datecommande;
-	private Double prixtotal;
+	/*private Date datecommande;
+	private Double prixtotal;*/
 	
 	@OneToMany(mappedBy = "facture")
 	private Set<LigneFacture> lignefacture = new HashSet();
