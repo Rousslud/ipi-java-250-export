@@ -22,6 +22,30 @@ public class Facture {
 	
 	@ManyToOne
 	private Client client;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Set<LigneFacture> getLignefacture() {
+		return lignefacture;
+	}
+
+	public void setLignefacture(Set<LigneFacture> lignefacture) {
+		this.lignefacture = lignefacture;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 	
 
 }
