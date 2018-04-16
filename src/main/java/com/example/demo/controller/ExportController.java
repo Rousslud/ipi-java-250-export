@@ -5,7 +5,7 @@ import com.example.demo.dto.FactureDTO;
 import com.example.demo.service.ClientService;
 import com.example.demo.service.FactureService;
 import com.example.demo.service.export.ExportCSVService;
-import com.example.demo.service.export.ExportPDFITextService;
+/*import com.example.demo.service.export.ExportPDFITextService;*/
 import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,8 +31,8 @@ public class ExportController {
     @Autowired
     private FactureService factureService;
 
-    @Autowired
-    private ExportPDFITextService exportPDFITextService;
+    /*@Autowired
+    private ExportPDFITextService exportPDFITextService;*/
 
     @GetMapping("/clients/csv")
     public void clientsCSV(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -42,12 +42,12 @@ public class ExportController {
         exportCSVService.export(response.getWriter(), clients);
     }
 
-    @GetMapping("/factures/{id}/pdf")
+    /*@GetMapping("/factures/{id}/pdf")
     public void facturePDF(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException {
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "attachment; filename=\"facture " + id + ".pdf\"");
         FactureDTO facture = factureService.findById(id);
         exportPDFITextService.export(response.getOutputStream(), facture);
-    }
+    }*/
 
 }

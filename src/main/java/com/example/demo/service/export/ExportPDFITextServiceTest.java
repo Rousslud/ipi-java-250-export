@@ -13,7 +13,7 @@ public class ExportPDFITextServiceTest {
 
     @Test
     public void test() throws IOException, DocumentException {
-        ClientDTO clientDTO = new ClientDTO();
+       /* ClientDTO clientDTO = new ClientDTO();
         clientDTO.setNom("PETRILLO");
         clientDTO.setPrenom("Alexandre");
 
@@ -29,6 +29,6 @@ public class ExportPDFITextServiceTest {
         ExportPDFITextService exportPDFITextService = new ExportPDFITextService();
         FileOutputStream fos = new FileOutputStream("./target/factureDTO-itext.pdf");
         exportPDFITextService.export(fos, factureDTO);
-        fos.close();
+        fos.close();*/
     }
 } 
