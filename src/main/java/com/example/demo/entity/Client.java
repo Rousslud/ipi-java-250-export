@@ -27,8 +27,8 @@ public class Client {
 	private String email;
 	@Column
 	private double telephone;
-	@OneToMany(mappedBy = "client")
-	private Set<Facture> factures = new HashSet();
+	/*@OneToMany(mappedBy = "client")
+	private Set<Facture> factures = new HashSet();*/
 	
 	
 	public Long getId() {
