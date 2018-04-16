@@ -35,9 +35,14 @@ public class InitData {
         em.persist(article);
         
         Article article2 = new Article();
-        article2.setLibelle("Carte mère ASUS 5875");
-        article2.setPrix(99.90);
+        article2.setLibelle("Ram Corsair 4Gb DDR3");
+        article2.setPrix(159.90);
         em.persist(article2);
+        
+        Article article3 = new Article();
+        article3.setLibelle("Disque dur SSD Corsair 512Go");
+        article3.setPrix(259.90);
+        em.persist(article3);
 
         Facture facture = new Facture();
         facture.setClient(client);
@@ -48,6 +53,18 @@ public class InitData {
         ligneFacture1.setArticle(article);
         ligneFacture1.setQuantite(1);
         em.persist(ligneFacture1);
+        
+        LigneFacture ligneFacture2 = new LigneFacture();
+        ligneFacture2.setFacture(facture);
+        ligneFacture2.setArticle(article2);
+        ligneFacture2.setQuantite(4);
+        em.persist(ligneFacture2);
+        
+        LigneFacture ligneFacture3 = new LigneFacture();
+        ligneFacture3.setFacture(facture);
+        ligneFacture3.setArticle(article3);
+        ligneFacture3.setQuantite(1);
+        em.persist(ligneFacture3);
 
     }
 }
