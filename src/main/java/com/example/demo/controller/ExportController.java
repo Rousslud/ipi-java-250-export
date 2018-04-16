@@ -1,16 +1,14 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.ClientDTO;
-import com.example.demo.dto.FactureDTO;
 import com.example.demo.service.ClientService;
 import com.example.demo.service.FactureService;
 import com.example.demo.service.export.ExportCSVService;
+import com.example.demo.service.export.ExportXLSXService;
 /*import com.example.demo.service.export.ExportPDFITextService;*/
-import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,9 +25,12 @@ public class ExportController {
 
     @Autowired
     private ExportCSVService exportCSVService;
-
+    
     @Autowired
-    private FactureService factureService;
+    private ExportXLSXService exportXLSXService;
+
+    /*@Autowired
+    private FactureService factureService;*/
 
     /*@Autowired
     private ExportPDFITextService exportPDFITextService;*/
@@ -40,6 +41,14 @@ public class ExportController {
         response.setHeader("Content-Disposition", "attachment; filename=\"clients.csv\"");
         List<ClientDTO> clients = clientService.findAllClients();
         exportCSVService.export(response.getWriter(), clients);
+    }
+    
+    @GetMapping("/clients/xlsx")
+    public void clientsXLS(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/xlsx");
+        response.setHeader("Content-Disposition", "attachment; filename=\"clients.xlsx\"");
+        List<ClientDTO> clients = clientService.findAllClients();
+        exportXLSXService.export(response.getOutputStream(), clients);
     }
 
     /*@GetMapping("/factures/{id}/pdf")
