@@ -15,7 +15,13 @@ import com.example.demo.dto.ClientDTO;
 public class ExportCSVService {
 	
 	public void export(Writer printWriter, List<ClientDTO> clients) throws IOException{
-		printWriter.write("Hello World");
+		for(ClientDTO item : clients){
+			String nomClient = item.getNom();
+			String prenomClient = item.getPrenom();
+			printWriter.write(nomClient + " " + prenomClient);
+			printWriter.write("\n");
+		}
+		
 	}
 
 }

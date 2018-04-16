@@ -23,11 +23,21 @@ public class InitData {
         client.setNom("PETRILLO");
         client.setPrenom("Alexandre");
         em.persist(client);
+        
+        Client client2  = new Client();
+        client2.setNom("Villoud");
+        client2.setPrenom("Pierre-Julien");
+        em.persist(client2);
 
         Article article = new Article();
         article.setLibelle("Carte mère ASROCK 2345");
         article.setPrix(79.90);
         em.persist(article);
+        
+        Article article2 = new Article();
+        article2.setLibelle("Carte mère ASUS 5875");
+        article2.setPrix(99.90);
+        em.persist(article2);
 
         Facture facture = new Facture();
         facture.setClient(client);
