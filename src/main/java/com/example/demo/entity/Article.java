@@ -17,6 +17,9 @@ public class Article {
 
     @Column
     private Double prix;
+    
+	@OneToOne
+	private LigneFacture lignefacture;
 
     public Long getId() {
         return id;
