@@ -30,7 +30,6 @@ public class ExportCSVService {
         printWriter.write("Ancienneté (en années) : ;");
         printWriter.write("\n");
         for (ClientDTO client : clients) {
-        	String value="\"" +client.getNom() + "\"";
         	printWriter.write("\"" +client.getId() + "\"");
             printWriter.write(";");
             printWriter.write("\"" +client.getNom() + "\"");

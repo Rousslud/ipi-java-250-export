@@ -37,6 +37,7 @@ public class Client {
     
     @Column
     private Date dateinscription;
+    
 
     public Long getId() {
         return id;
@@ -109,6 +110,7 @@ public class Client {
 	public void setDateinscription(Date dateinscription2) {
 		this.dateinscription = dateinscription2;
 	}
-    
+
+
     
 }

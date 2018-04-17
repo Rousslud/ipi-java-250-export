@@ -80,7 +80,8 @@ public class ExportXLSXService {
         styleBorder.setTopBorderColor(IndexedColors.BLACK.getIndex());
         styleBorder.setRightBorderColor(IndexedColors.BLACK.getIndex());
         styleBorder.setLeftBorderColor(IndexedColors.BLACK.getIndex());
-               
+         
+        int rownb=0;
         XSSFRow rowTitle = sheet.createRow(0);
 		XSSFCell cellTitle = rowTitle.createCell(1);
 		cellTitle.setCellValue("Numéro de client : ");

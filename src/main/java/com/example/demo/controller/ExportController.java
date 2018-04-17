@@ -64,14 +64,32 @@ public class ExportController {
         List<ClientDTO> clients = clientService.findAllClients();
         exportXLSXService.export(response.getOutputStream(), clients);
     }
+    
+    /*@GetMapping("/clients/{id}/factures/xlsx")
+    public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	response.setContentType("text/xlsx");
+        response.setHeader("Content-Disposition", "attachment; filename=\"client" + clientId +".xlsx\"");
+        ClientDTO client = clientService.findById(clientId);
+        exportXLSXServiceOnglet.export(response.getOutputStream(), client);
+    }*/
 
+    /*
     @GetMapping("/clients/{id}/factures/xlsx")
     public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
     	response.setContentType("text/xlsx");
         response.setHeader("Content-Disposition", "attachment; filename=\"factures client " + clientId + ".xlsx\"");
-        ClientDTO client = clientService.findById(clientId);
-        exportXLSXServiceOnglet.export(response.getOutputStream(), client);
+        List<FactureDTO> factures = factureService.findByClientId(clientId);
+        exportXLSXServiceOnglet.export(response.getOutputStream(), factures);
+    }*/
+    
+    @GetMapping("/clients/{id}/factures/xlsx")
+    public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	response.setContentType("text/xlsx");
+        response.setHeader("Content-Disposition", "attachment; filename=\"factures client " + clientId + ".xlsx\"");
+        List<FactureDTO> factures = factureService.findAllFactures();
+        exportXLSXServiceOnglet.export(response.getOutputStream(), factures, clientId);
     }
+    
 
     @GetMapping("/clients/pdf")
     public void clientsPDF(HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException{

@@ -100,6 +100,5 @@ public class ClientDTO {
 	public void setDateinscription(Date date) {
 		this.dateinscription = date;
 	}
-    
-    
+	
 }
