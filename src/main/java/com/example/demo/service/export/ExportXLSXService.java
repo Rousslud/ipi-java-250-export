@@ -37,6 +37,8 @@ public class ExportXLSXService {
 		}
 		sheet.setColumnWidth(4,10000);
 		sheet.setColumnWidth(7,10000);
+		sheet.setDefaultRowHeight((short) 500);
+		sheet.isPrintGridlines();
 
 	    Font font = workbook.createFont();
         font.setColor(IndexedColors.RED.getIndex());

@@ -33,7 +33,7 @@ text-align:center;}
 
     {{#factures}}
 
-        <h3>Facture numéro {{id}} de {{client.nom}} {{client.prenom}} <a href="/factures/{{id}}/pdf">pdf</a></h3>
+        <h3>Facture n°{{id}} datant du {{datecommande}} de {{client.nom}} {{client.prenom}} (client n°{{client.id}}) :  <a href="/factures/{{id}}/pdf">Téléchargez le pdf ici</a></h3>
         {{>factures}}
     {{/factures}}
 </body>
