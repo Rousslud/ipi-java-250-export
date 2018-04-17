@@ -22,6 +22,19 @@ public class ClientService {
 
     public List<ClientDTO> findAllClients() {
         return clientRepository.findAll().stream().map(c-> clientMapper.map(c)).collect(toList());
+        
+        /*
+         * 
+         * Autre facon d #ecrire
+         * List<Client> clients = clientRepository.findAll();
+         * List<ClientDTO> dtos = new ArrayList<>();
+         * for (Client client : clients){
+         *  ClientDTO dto = clientMapper.map(client);
+         *  dtos.add(dto);
+         *  } 
+         *  return dtos;
+         * 
+         * */
     }
     
     public ClientDTO findById(Long id) {

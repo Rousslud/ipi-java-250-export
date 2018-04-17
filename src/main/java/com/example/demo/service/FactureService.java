@@ -31,8 +31,7 @@ public class FactureService {
                 );
     }
     
-   /*public List<FactureDTO> findByClientId(Long clientid) {
+   public List<FactureDTO> findByClientId(Long clientid) {
         return factureRepository.findByClientId(clientid).stream().map(factureMapper::map).collect(toList());
-    	/*return factureRepository.findByClientId(id);*//*
-    }*/
+    }
 }

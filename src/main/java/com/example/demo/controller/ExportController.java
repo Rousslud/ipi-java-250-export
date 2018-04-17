@@ -9,6 +9,7 @@ import com.example.demo.service.export.ExportPDFITextService;
 import com.example.demo.service.export.ExportPDFService;
 import com.example.demo.service.export.ExportXLSXService;
 import com.example.demo.service.export.ExportXLSXServiceOnglet;
+import com.example.demo.service.export.ExportXLSXServiceOnglet2;
 import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,6 +43,9 @@ public class ExportController {
     
     @Autowired
     private ExportXLSXServiceOnglet exportXLSXServiceOnglet;
+    
+    @Autowired
+    private ExportXLSXServiceOnglet2 exportXLSXServiceOnglet2;
 
     @Autowired
     private ExportPDFITextService exportPDFITextService;
@@ -65,30 +69,23 @@ public class ExportController {
         exportXLSXService.export(response.getOutputStream(), clients);
     }
     
-    /*@GetMapping("/clients/{id}/factures/xlsx")
-    public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	response.setContentType("text/xlsx");
-        response.setHeader("Content-Disposition", "attachment; filename=\"client" + clientId +".xlsx\"");
-        ClientDTO client = clientService.findById(clientId);
-        exportXLSXServiceOnglet.export(response.getOutputStream(), client);
-    }*/
-
-    /*
-    @GetMapping("/clients/{id}/factures/xlsx")
-    public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	response.setContentType("text/xlsx");
-        response.setHeader("Content-Disposition", "attachment; filename=\"factures client " + clientId + ".xlsx\"");
-        List<FactureDTO> factures = factureService.findByClientId(clientId);
-        exportXLSXServiceOnglet.export(response.getOutputStream(), factures);
-    }*/
     
     @GetMapping("/clients/{id}/factures/xlsx")
     public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
     	response.setContentType("text/xlsx");
         response.setHeader("Content-Disposition", "attachment; filename=\"factures client " + clientId + ".xlsx\"");
+        List<FactureDTO> factures = factureService.findByClientId(clientId);
+        exportXLSXServiceOnglet2.export(response.getOutputStream(), factures);
+    }
+    
+    /*Methode qui fonctionne mais recupere toutes les donnees pour les trier et ce n'est pas terrible niveau performance
+     * @GetMapping("/clients/{id}/factures/xlsx")
+    public void facturesDUnClient(@PathVariable("id") Long clientId, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	response.setContentType("text/xlsx");
+        response.setHeader("Content-Disposition", "attachment; filename=\"factures client " + clientId + ".xlsx\"");
         List<FactureDTO> factures = factureService.findAllFactures();
         exportXLSXServiceOnglet.export(response.getOutputStream(), factures, clientId);
-    }
+    }*/
     
 
     @GetMapping("/clients/pdf")
