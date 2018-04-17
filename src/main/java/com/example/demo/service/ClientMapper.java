@@ -14,6 +14,12 @@ public class ClientMapper {
         dto.setId(entity.getId());
         dto.setNom(entity.getNom());
         dto.setPrenom(entity.getPrenom());
+        dto.setAdresse(entity.getAdresse());
+        dto.setCP(entity.getCP());
+        dto.setDateinscription(entity.getDateinscription());
+        dto.setEmail(entity.getEmail());
+        dto.setTelephone(entity.getTelephone());
+        dto.setVille(entity.getVille());
         return dto;
     }
 }

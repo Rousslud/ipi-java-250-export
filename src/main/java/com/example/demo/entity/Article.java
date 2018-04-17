@@ -14,6 +14,9 @@ public class Article {
 
     @Column
     private String libelle;
+    
+    @Column
+    private String categorie;
 
     @Column
     private Double prix;
@@ -41,4 +44,12 @@ public class Article {
     public void setPrix(Double prix) {
         this.prix = prix;
     }
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
 }

@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,6 +14,8 @@ public class FactureDTO {
     private ClientDTO client;
 
     private List<LigneFactureDTO> ligneFactures = new ArrayList<>();
+    
+    private Date datecommande;
 
     public Long getId() {
         return id;
@@ -38,4 +41,13 @@ public class FactureDTO {
         this.ligneFactures = ligneFactures;
     }
 
+	public Date getDatecommande() {
+		return datecommande;
+	}
+
+	public void setDatecommande(Date datecommande) {
+		this.datecommande = datecommande;
+	}
+
+    
 }

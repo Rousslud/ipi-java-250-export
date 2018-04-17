@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
+
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,6 +21,9 @@ public class Facture {
 
     @OneToMany(mappedBy = "facture")
     private Set<LigneFacture> ligneFactures = new HashSet<>();
+    
+    @Column
+    private Date datecommande;
 
     public Long getId() {
         return id;
@@ -43,4 +48,14 @@ public class Facture {
     public void setLigneFactures(Set<LigneFacture> ligneFactures) {
         this.ligneFactures = ligneFactures;
     }
+
+	public Date getDatecommande() {
+		return datecommande;
+	}
+
+	public void setDatecommande(Date datecommande2) {
+		this.datecommande = datecommande2;
+	}
+    
+    
 }

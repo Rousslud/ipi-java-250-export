@@ -23,6 +23,7 @@ public class FactureMapper {
         factureDTO.setId(f.getId());
         factureDTO.setClient(clientMapper.map(f.getClient()));
         factureDTO.setLigneFactures(f.getLigneFactures().stream().map(this::mapLigneFacture).collect(toList()));
+        factureDTO.setDatecommande(f.getDatecommande());
         return factureDTO;
     }
 
@@ -31,6 +32,7 @@ public class FactureMapper {
         ligneFactureDTO.setDesignation(lf.getArticle().getLibelle());
         ligneFactureDTO.setQuantite(lf.getQuantite());
         ligneFactureDTO.setPrixUnitaire(lf.getArticle().getPrix());
+        ligneFactureDTO.setCategorie(lf.getArticle().getCategorie());
         return ligneFactureDTO;
     }
 

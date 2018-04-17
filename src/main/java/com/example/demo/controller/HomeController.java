@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.PostConstruct;
+
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -29,7 +31,7 @@ public class HomeController {
     private InitData initData;
 
     @PostConstruct
-    public void initTestData() {
+    public void initTestData() throws ParseException {
         initData.insertTestData();
     }
 
