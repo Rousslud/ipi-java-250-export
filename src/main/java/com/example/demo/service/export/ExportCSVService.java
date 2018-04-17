@@ -18,18 +18,21 @@ import javax.persistence.Column;
 public class ExportCSVService {
 
     public void export(Writer printWriter, List<ClientDTO> clients) throws IOException {
-        printWriter.write("Nom;");
-        printWriter.write("Prenom;");
-        printWriter.write("Adresse;");
-        printWriter.write("Code postal;");
-        printWriter.write("Ville;");
-        printWriter.write("Email;");
-        printWriter.write("Telephone;");
-        printWriter.write("Date d'inscription;");
-        printWriter.write("Ancienneté (en années);");
+    	printWriter.write("Numéro de client : ;");
+    	printWriter.write("Nom : ;");
+        printWriter.write("Prenom : ;");
+        printWriter.write("Adresse : ;");
+        printWriter.write("Code postal : ;");
+        printWriter.write("Ville : ;");
+        printWriter.write("Email : ;");
+        printWriter.write("Telephone : ;");
+        printWriter.write("Date d'inscription : ;");
+        printWriter.write("Ancienneté (en années) : ;");
         printWriter.write("\n");
         for (ClientDTO client : clients) {
         	String value="\"" +client.getNom() + "\"";
+        	printWriter.write("\"" +client.getId() + "\"");
+            printWriter.write(";");
             printWriter.write("\"" +client.getNom() + "\"");
             printWriter.write(";");
             printWriter.write("\"" +client.getPrenom() + "\"");

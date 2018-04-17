@@ -27,7 +27,7 @@ public class FactureService {
         return factureRepository.findById(id)
                 .map(factureMapper::map)
                 .orElseThrow(() ->
-                        new IllegalArgumentException("Facture inconnu " + id)
+                        new IllegalArgumentException("? Facture inconnue avec id =  " + id + " ?")
                 );
     }
 }

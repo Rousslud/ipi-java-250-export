@@ -1,15 +1,17 @@
 <table border="1">
     <thead>
     <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Date d'inscription</th>
-        <th>Factures</th>
+    	<th>Numéro de client : </th>
+        <th>Nom : </th>
+        <th>Prénom :</th>
+        <th>Date d'inscription : </th>
+        <th>Factures : </th>
     </tr>
     </thead>
     <tbody>
     {{#clients}}
         <tr>
+        	<td>{{id}}</td>
             <td>{{nom}}</td>
             <td>{{prenom}}</td>
             <td>{{dateinscription}}</td>
