@@ -32,7 +32,8 @@ public class FactureMapper {
         ligneFactureDTO.setDesignation(lf.getArticle().getLibelle());
         ligneFactureDTO.setQuantite(lf.getQuantite());
         ligneFactureDTO.setPrixUnitaire(lf.getArticle().getPrix());
-        ligneFactureDTO.setCategorie(lf.getArticle().getCategorie());
+        ligneFactureDTO.setMainCategorie(lf.getArticle().getMainCategorie());
+        ligneFactureDTO.setSubCategorie(lf.getArticle().getSubCategorie());
         return ligneFactureDTO;
     }
 

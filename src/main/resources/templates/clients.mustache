@@ -3,7 +3,8 @@
     <tr>
         <th>Nom</th>
         <th>Prénom</th>
-        <th>Ses factures</th>
+        <th>Date d'inscription</th>
+        <th>Factures</th>
     </tr>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
         <tr>
             <td>{{nom}}</td>
             <td>{{prenom}}</td>
+            <td>{{dateinscription}}</td>
             <td><a href="/clients/{{id}}/factures/xlsx">Télécharger toutes ses factures</a></td>
         </tr>
     {{/clients}}

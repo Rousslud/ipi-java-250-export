@@ -16,7 +16,10 @@ public class Article {
     private String libelle;
     
     @Column
-    private String categorie;
+    private String mainCategorie;
+    
+    @Column
+    private String subCategorie;
 
     @Column
     private Double prix;
@@ -45,11 +48,21 @@ public class Article {
         this.prix = prix;
     }
 
-	public String getCategorie() {
-		return categorie;
+	public String getMainCategorie() {
+		return mainCategorie;
 	}
 
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
+	public void setMainCategorie(String mainCategorie) {
+		this.mainCategorie = mainCategorie;
 	}
+
+	public String getSubCategorie() {
+		return subCategorie;
+	}
+
+	public void setSubCategorie(String subCategorie) {
+		this.subCategorie = subCategorie;
+	}
+
+
 }

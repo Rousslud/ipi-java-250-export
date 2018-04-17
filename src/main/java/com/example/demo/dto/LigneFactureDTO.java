@@ -9,7 +9,8 @@ public class LigneFactureDTO {
     private String designation;
     private Integer quantite;
     private Double prixUnitaire;
-    private String categorie;
+    private String mainCategorie;
+    private String subCategorie;
 
     public String getDesignation() {
         return designation;
@@ -35,13 +36,23 @@ public class LigneFactureDTO {
         this.prixUnitaire = prixUnitaire;
     }
 
-	public String getCategorie() {
-		return categorie;
+	public String getMainCategorie() {
+		return mainCategorie;
 	}
 
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
+	public void setMainCategorie(String mainCategorie) {
+		this.mainCategorie = mainCategorie;
 	}
+
+	public String getSubCategorie() {
+		return subCategorie;
+	}
+
+	public void setSubCategorie(String subCategorie) {
+		this.subCategorie = subCategorie;
+	}
+
+
     
     
 }

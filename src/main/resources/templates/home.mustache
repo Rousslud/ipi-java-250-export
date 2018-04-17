@@ -1,23 +1,39 @@
 <html>
 <head>
-<title></title>
+<title>Base de données de AmazIPI</title>
 </head>
+<style>
+body{
+	background-color:#dfd7d7;
+}
+td, th{
+	padding:10px 10px 10px 10px;
+	}
+th{
+	background-color:#626262;
+	color:white;
+	}
+h1{
+text-align:center;}
+
+</style>
 <body>
 
+	<h1> Base de données AmazIPI</h1>
     <hr/>
-    <h1>Clients <a href="/clients/csv">csv</a>-<a>xlsx</a>-<a>json</a>-<a>xml</a>-<a>pdf</a></h1>
+    <h2>Liste des clients <a href="/clients/csv">csv</a>-<a>xlsx</a>-<a>pdf</a></h2>
     <hr/>
 
     {{>clients}}
 
     <hr/>
-    <h1>Factures</h1>
+    <h2>Liste des factures</h2>
     <hr/>
 
 
     {{#factures}}
 
-        <h2>Facture numéro {{id}} de {{client.nom}} {{client.prenom}} <a href="/factures/{{id}}/pdf">pdf</a></h2>
+        <h3>Facture numéro {{id}} de {{client.nom}} {{client.prenom}} <a href="/factures/{{id}}/pdf">pdf</a></h3>
         {{>factures}}
     {{/factures}}
 </body>
